@@ -1,0 +1,7 @@
+{
+    "code-runner.executorMap": {
+      "typescript": "npx ts-node \"$file\""
+    },
+    "code-runner.runInTerminal": true
+  }
+  

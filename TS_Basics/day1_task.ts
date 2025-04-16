@@ -10,6 +10,8 @@ interface PersonInfo {
     age: number;
     address: Address;
     contactNumbers: string[];
+    getFullAdress() : string;
+    getFullName() : string;
   }
 
 var person:PersonInfo = {    
@@ -21,18 +23,19 @@ var person:PersonInfo = {
         city: "Anytown",
         pincode: 12345
     },       
-    contactNumbers: ["123-456-7890", "098-765-4321"]
+    contactNumbers: ["123-456-7890", "098-765-4321"],
+     getFullName(): string {
+      const fullname : string = this.firstName + " " + this.lastName
+      return fullname;
+    },
+    getFullAdress():string{
+      const fullAddress = this.address.street + ", " + this.address.city + ", " + this.address.pincode
+      return fullAddress ;
+    }
   };
 
-  function GetFullName(person:PersonInfo): string {
-    const fullname = person.firstName + " " + person.lastName
-    return fullname;
-  }
+ 
+  
 
-  function GetFullAdress(person:PersonInfo):string{
-    const fullAddress = person.address.street + ", " + person.address.city + ", " + person.address.pincode
-    return fullAddress ;
-  }
-
-  console.log(GetFullName(person));
-  console.log(GetFullAdress(person));   
+  console.log(person.getFullName());
+  console.log(person.getFullAdress());   
